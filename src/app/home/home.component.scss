@@ -1,0 +1,11 @@
+#page-container {
+    background-color: rgb(44, 43, 49);
+    display: flex;
+    justify-content: center;
+    height:40rem;
+    width: 70em;
+    border-radius: 20px;
+    box-shadow: 2px 5px 15px rgba(0,0,0,0.5);
+    overflow-x: auto;
+    overflow-y: scroll;
+}

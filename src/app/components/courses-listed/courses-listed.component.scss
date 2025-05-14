@@ -1,0 +1,23 @@
+ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+    width: fit-content; 
+    padding-block: 30px;
+    list-style: none;
+
+    li {
+        font-family: 'Trebuchet MS';
+        color: white;
+        margin-top: 10px;
+        width: fit-content;
+        background-color: rgb(94, 96, 99);
+        border-radius: 5px;
+
+        #course-container {
+            width: 65em;
+            height: 7em;
+        }
+    }
+}
