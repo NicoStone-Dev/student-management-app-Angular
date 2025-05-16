@@ -1,33 +1,10 @@
 <div id="courselist-container">
     <ul>
-        <li>
+        <li *ngFor="let course of courseList()">
             <div id="course-container">
-                <p>THIS IS A COURSE</p>
-            </div>
-        </li>
-        <li>
-            <div id="course-container">
-                <p>THIS IS A COURSE</p>
-            </div>
-        </li>
-        <li>
-            <div id="course-container">
-                <p>THIS IS A COURSE</p>
-            </div>
-        </li>
-        <li>
-            <div id="course-container">
-                <p>THIS IS A COURSE</p>
-            </div>
-        </li>
-        <li>
-            <div id="course-container">
-                <p>THIS IS A COURSE</p>
-            </div>
-        </li>
-        <li>
-            <div id="course-container">
-                <p>THIS IS A COURSE</p>
+                <h3>{{course.name}}</h3>
+                <p> {{course.mainTeacherName}} </p>
+                <p> {{course.mainTeacherEmail}} </p>
             </div>
         </li>
     </ul>

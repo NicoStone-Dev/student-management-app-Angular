@@ -10,7 +10,7 @@ import { HomeComponent } from './home/home.component';
   template: `
     <app-header/>
     <main>
-      <app-sidebar/>
+        <app-sidebar/>
       <app-home/>
     </main>
   `,
