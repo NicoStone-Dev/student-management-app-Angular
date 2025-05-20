@@ -1,10 +1,28 @@
 <div id="courselist-container">
     <ul>
         <li *ngFor="let course of courseList()">
-            <div id="course-container">
-                <h3>{{course.name}}</h3>
-                <p> {{course.mainTeacherName}} </p>
-                <p> {{course.mainTeacherEmail}} </p>
+            <div appHover id="course-container">
+                <span id="course-info">
+                    <div id="name">
+                        <h2>{{course.name}}</h2>
+                    </div>
+                    <div id="teacher-info">
+                        <div id="teacher-name">
+                            <p> Teacher: </p>
+                            <p> {{course.mainTeacherName}} </p>
+                        </div>
+                        <div id="teacher-email">
+                            <p> Teacher Email: </p>
+                            <p> {{course.mainTeacherEmail}} </p>
+                        </div>
+                    </div>
+                </span>
+                <div id="student-register-button">
+                    <p>Register a Student</p>
+                    <span routerLink="/register_student">
+                        <img src="/assets/add_students.png" alt="student-register">
+                    </span>
+                </div>
             </div>
         </li>
     </ul>

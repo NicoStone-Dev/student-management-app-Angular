@@ -1,55 +1,85 @@
 header {
-    width: 100%;
-    background-color: #BD2F2F;
     display: flex;
     align-items: center;
+    flex-direction: column;
     padding-inline: 10px;
     box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.5);
-    position: stickyx;
-    nav {
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        width: 100%;
-        display: flex;
-        align-content: center;
-        justify-content: left;
 
-        span {
-            cursor: pointer;
-            color: white;
-            font-size: 14pt;
-            padding-inline-start: 30px;
+    #header-container {
+        background-color: #401693;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        padding-inline: 10px;
+        width: 100vw;
+
+        nav {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            width: 100%;
+            display: flex;
             align-content: center;
+            justify-content: left;
+
+            span {
+                cursor: pointer;
+                color: white;
+                font-size: 14pt;
+                padding-inline-start: 30px;
+                align-content: center;
+            }
         }
-    }
 
-    #home-icon {
-        cursor: pointer;
-        display: flex;
-        justify-content: right;
-        align-self: center;
-        padding-inline: 100px;
-        padding-block: 10px;
-
-        img {
-            width: 130px;
-            height: 60px;
-        }
-    }
-
-    span {
-        padding-inline: 55px;
-
-        #sidebar-show {
+        #home-icon {
             cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            border: none;
-            background-color: rgba(255, 255, 255, 0);
+            display: flex;
+            justify-content: right;
+            align-self: center;
+            padding-inline: 100px;
+            padding-block: 10px;
 
-            img {
-                background-color: white;
-                width: 40px;
-                border-radius: 50px;
+                img {
+                    width: 130px;
+                height: 60px;
+            }
+        }
+    }
+
+    #topbar-container {
+        background-color: #270d5b;
+        width: 100vw;
+        height: min-content;
+        box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.5);
+
+        ul {
+            size: 100%;
+            font-family: 'Trebuchet MS';
+            font-size: 12pt;
+            color: white;
+            display: flex;
+            flex-direction: row;
+            padding-left: 1em;
+            padding-right: 1em;
+            list-style: none;
+            justify-content: space-evenly;
+            height: fit-content;
+            margin: 0;
+
+            li {
+                display: flex;
+                align-items: center;
+
+                .topbar-text {
+                    padding-inline-start: 8px;
+                    font-size: 12pt;
+                }
+
+                .topbar-icons {
+                    cursor: pointer;
+                    background-color: rgb(255, 255, 255);
+                    width: 1.5em;
+                    height: 1.5em;
+                    border-radius: 5px;
+                }
             }
         }
     }

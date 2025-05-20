@@ -1,12 +1,30 @@
 <header>
-    <span>
-        <button id= "sidebar-show"><img src="assets/Button-circle-arrow-down_icon-icons.com_52238.png" alt="Show Sidebar"></button>
-    </span>
-    <nav>
-        <span id='login-nav'>Login</span>
-        <span id='register-nav'>Register</span>
-    </nav>
-    <nav id="home-icon">
-        <img src="/assets/ManaS_header.png" alt="ManaS" />
-    </nav>
+    <div id = 'header-container'>
+        <nav>
+            <span appHover id='login-nav'>Login</span>
+            <span appHover id='register-nav'>Register</span>
+        </nav>
+        <nav appHover id="home-icon">
+            <img routerLink="/courses" src="/assets/ICON-MANAS.png" alt="ManaS" />
+        </nav>
+    </div>
+    <div id="topbar-container" #topbar>
+        <ul>
+            <li appHover> <img routerLink="/courses" class="topbar-icons" src="/assets/courses icon.png" alt="Courses">
+                <p class="topbar-text">Courses</p>
+            </li>
+            <li appHover> <img routerLink="/add_course" class="topbar-icons" src="/assets/add_courses.png"
+                    alt="New Course">
+                <p class="topbar-text">Submit a New Course</p>
+            </li>
+            <li appHover> <img routerLink="/students" class="topbar-icons" src="/assets/student_4950.png"
+                    alt="Students">
+                <p class="topbar-text">Students</p>
+            </li>
+            <li appHover> <img routerLink="/add_student" class="topbar-icons" src="/assets/add_students.png"
+                    alt="Add Student">
+                <p class="topbar-text">Add Student</p>
+            </li>
+        </ul>
+    </div>
 </header>

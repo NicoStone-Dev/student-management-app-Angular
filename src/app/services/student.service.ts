@@ -3,6 +3,7 @@ import { environment } from '../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Student } from '../models/student';
+import { Course } from '../models/course';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,11 @@ export class StudentService {
   //Add, list, find, update and delete methods must be added 
 
   //List method
-  public listStudents(): Observable<Student[]>{
-    return this.http.get<Student[]>(`${this.apiServerURL}/students/list`)
+  listStudents(): Observable<Student[]>{
+    return this.http.get<Student[]>(`${this.apiServerURL}/students/list`);
+  }
+
+  getAttributedCourse(courseId : number): Observable<Course>{
+    return this.http.get<Course>(`${this.apiServerURL}/search/${courseId}`);
   }
 }

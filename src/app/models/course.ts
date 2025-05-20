@@ -1,8 +1,11 @@
+import { Student } from "./student";
+
 export interface Course{
     id : number,
     name: string,
     hoursToFinish: number,
     mainTeacherName: string,
     mainTeacherEmail: string,
-    course_code: string
+    course_code: string,
+    studentList : Array<Student>
 }
