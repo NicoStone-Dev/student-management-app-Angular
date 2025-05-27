@@ -4,35 +4,50 @@ import { Student } from '../../models/student';
 import { catchError } from 'rxjs';
 import { NgFor } from '@angular/common';
 import { HoverDirective } from '../../directives/hover.directive';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { CourseService } from '../../services/course.service';
 
 @Component({
   selector: 'app-students-listed',
-  imports: [NgFor, HoverDirective],
+  imports: [NgFor, HoverDirective, RouterLink],
   templateUrl: './students-listed.component.html',
   styleUrl: './students-listed.component.scss'
 })
 export class StudentsListedComponent implements OnInit {
+  //Checks if data is still being loaded and treated from the DB
+  isLoading = signal(false);
+
   studentService = inject(StudentService);
+  courseService = inject(CourseService);
   studentList = signal<Array<Student>>([]);
 
-  ngOnInit(): void {
-    this.studentService.listStudents()
-      .pipe(
-        catchError((err) => {
-          throw err;
-        })
-      ).subscribe((data) => {
-        this.studentList.set(data);
-      })
+  private route = inject(ActivatedRoute);
 
-/*     this.studentService.getAttributedCourse(this.studentList.courseId)
-      .pipe(
-        catchError((err) => {
-            throw err;
-        })
-        .subscribe((data)=> {
-          this.
-        })
-      ) */
+
+  ngOnInit(): void {
+    //marking the start of data loading
+    this.isLoading.set(true)
+
+    //Clearing any previous student
+    this.studentList.set([])
+    // Defining id that is passed through the url:
+    const courseIdFromRoute = this.route.snapshot.paramMap.get('id');
+
+    if (courseIdFromRoute != null) {
+      // Then we change it to number type
+      const numericCourseId = +courseIdFromRoute;
+      // At last we treat the data
+      this.courseService.showClass(numericCourseId)
+        .pipe(
+          catchError((err) => {
+            console.error('Error fetching students.', err);
+            throw err
+          }
+          )).subscribe((data) => {
+            this.studentList.set(data)
+            //marking the end of data loading
+            this.isLoading.set(true)
+          })
+    }
   }
 }

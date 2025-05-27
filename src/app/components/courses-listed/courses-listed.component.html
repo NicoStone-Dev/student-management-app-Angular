@@ -17,12 +17,24 @@
                         </div>
                     </div>
                 </span>
-                <div id="student-register-button">
+                <div class="student-action-button">
                     <p>Register a Student</p>
-                    <span routerLink="/register_student">
+                    <button routerLink="/register/student">
                         <img src="/assets/add_students.png" alt="student-register">
-                    </span>
+                    </button>
                 </div>
+                    <div class="student-action-button">
+                    <p>List</p>
+                    <button [routerLink]= "['/course', course.id, 'students']">
+                        <img src="/assets/student_4950.png" alt="student-register">
+                    </button>
+                </div>
+            </div>
+            <div id="course-edit-box">
+                <p>Edit</p>
+                <button id="edit-course" routerLink="/edit/course">
+                    <img src="/assets/edit-icon.png" alt="Edit">
+                </button>
             </div>
         </li>
     </ul>

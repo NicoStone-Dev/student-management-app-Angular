@@ -4,6 +4,7 @@ import { inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Course } from '../models/course';
+import { Student } from '../models/student';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +12,15 @@ import { Course } from '../models/course';
 export class CourseService {
   apiServerURL = environment.apiBaseUrl;
   http = inject(HttpClient);
-  
+
   //Add, list, find, update and delete methods must be added 
 
   //List method
-  listCourses(): Observable<Course[]>{
+  listCourses(): Observable<Course[]> {
     return this.http.get<Course[]>(`${this.apiServerURL}/courses/list`);
+  }
+
+  showClass(courseId: number): Observable<Student[]> {
+    return this.http.get<Student[]>(`${this.apiServerURL}/courses/${courseId}/show/students`);
   }
 }

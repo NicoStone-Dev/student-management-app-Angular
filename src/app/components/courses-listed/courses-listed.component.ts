@@ -16,7 +16,6 @@ export class CoursesListedComponent implements OnInit {
   courseService = inject(CourseService);
   courseList = signal<Array<Course>>([]);
 
-
   ngOnInit(): void {
     this.courseService.listCourses()
     .pipe(
