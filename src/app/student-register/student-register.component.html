@@ -3,21 +3,21 @@
     <h1>Register a Student</h1>
     <div id="info-container">
         <div id="left-container">
-            <p>Student Name:</p>
-            <input class="text-box" type="text">
-            <p>Date Of Birth:</p>
-            <input class="text-box" type="text">
-            <p>Grade Year: </p>
-            <input class="text-box" type="text">
+            <label for="studNameBox">Student Name:</label>
+            <input id="studNameBox" class="text-box" type="text" placeholder="Insert name" [value]="new_student().name" (input)="updateName($event)">
+            <label for="dateOfBirthBox">Date Of Birth:</label>
+            <input id="dateOfBirthBox" class="text-box" type="date" [value]="new_student().dateOfBirth" (input)="updateDateOfBirth($event)">
+            <label for="grade_yearBox">Grade Year: </label>
+            <input id="grade_yearBox" class="text-box" type="" placeholder="select"[value]="new_student().grade_year" (input)="updateGradeYear($event)">
         </div>
         <div id="right-container">
-            <p>Course attributed:</p>
-            <input type="text">
+            <label for="emailBox">Email:</label>
+            <input id="emailBox" type="email" placeholder="Insert email" [value]="new_student().email" (input)="updateEmail($event)">
         </div>
     </div>
     <div id="button-div">
-        <button id="action-button">
-            <p>Add</p>
+        <button appHover (click)="onRegister()" id="action-button">
+            <label>Add</label>
             <img src="./assets/student_4950.png" alt="">
         </button>
     </div>

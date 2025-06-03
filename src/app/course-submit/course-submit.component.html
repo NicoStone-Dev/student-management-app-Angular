@@ -2,22 +2,30 @@
 <div id="main-container">
     <h1>Course Submit</h1>
     <div id="info-container">
-        <div id="top-container">
-            <p>Course Name:</p>
-            <input class="text-box" type="text">
-            <p>Main teacher:</p>
-            <input class="text-box" type="text">
-            <p>Main teacher Email: </p>
-            <input class="text-box" type="text">
+        <div id="left-container">
+            <!-- 
+                -> Value is used here so it binds the value (of course) of the input html property to the variable seen in the class
+                -> Input notation links it to the methods found within the class that would update such variables, but now adressing it as an event (user's interaction)
+             -->
+            <label for="courseNameBox">Course Name:</label>
+            <input class="text-box" id="courseNameBox" type="text" placeholder="Insert Course Name"
+                [value]=new_course().name (input)="updateCourseName($event)">
+                <!-- As seen we just called the method in the component and passed in the input $event -->
+            <label for="teacherNameBox">Main teacher:</label>
+            <input class="text-box" id="teacherNameBox" type="text" placeholder="Insert Teacher's Name" [value]=new_course().mainTeacherName
+                (input)="updateTeacherName($event)">
+            <label for="teacherEmailBox">Main teacher Email: </label>
+            <input class="text-box" id="teacherEmailBox" type="email" placeholder="Insert Teacher's Email" [value]=new_course().mainTeacherEmail
+                (input)="updateTeacherEmail($event)">
         </div>
-        <div id="bottom-container">
-            <p>How many hours does it take?</p>
-            <input type="number">
+        <div id="right-container">
+            <label for="hoursLongBox">Hours Long</label>
+            <input id="hoursLongBox" type="number" placeholder="0" [value]=new_course().mainTeacherEmail (input)="updateHoursToFinish($event)">
         </div>
     </div>
     <div id="button-div">
-        <button id="action-button">
-            <p>Add</p>
+        <button appHover id="submit-button" (click)="onSubmit()">
+            <label>Add</label>
             <img src="./assets/courses icon.png" alt="">
         </button>
     </div>

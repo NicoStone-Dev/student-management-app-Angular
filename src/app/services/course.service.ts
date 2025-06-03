@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Course } from '../models/course';
 import { Student } from '../models/student';
+import { CourseDTO } from '../models/CourseDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,10 @@ export class CourseService {
   //List method
   listCourses(): Observable<Course[]> {
     return this.http.get<Course[]>(`${this.apiServerURL}/courses/list`);
+  }
+  //Add method
+  addCourse(new_course : CourseDTO): Observable<Object> {
+    return this.http.post(`${   this.apiServerURL}/courses/add`, new_course)
   }
 
   showClass(courseId: number): Observable<Student[]> {

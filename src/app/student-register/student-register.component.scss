@@ -43,13 +43,18 @@
             justify-content: center;
             align-items: left;
 
+            label {
+                padding-block: 10px;
+            }
+
             .text-box {
-                height: 1.5em;
+                height: 2.3em;
                 width: max-content;
                 background-color: rgb(56, 70, 92);
                 border: none;
                 color: white;
-                font-family: Impact;
+                font-family: Verdana;
+                font-weight: normal;
             }
         }
 
@@ -63,14 +68,16 @@
             justify-content: center;
             align-items: center;
 
-            >input {
-                height: 1.5em;
+            label {
+                padding-block: 10px;
+            }
+
+            input {
+                height: 2.3em;
                 width: fit-content;
                 background-color: rgb(56, 70, 92);
                 border: none;
                 color: white;
-                font-family: Verdana;
-                font-weight: normal;
             }
         }
     }
@@ -84,7 +91,7 @@
         width: 4em;
         align-self: center;
 
-        button {
+        #action-button {
             background-color: transparent;
             border: none;
             width: 100%;
