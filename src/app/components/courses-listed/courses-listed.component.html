@@ -4,7 +4,7 @@
             <div appHover id="course-container">
                 <span id="course-info">
                     <div id="name">
-                        <h2>{{course.name}}</h2>    
+                        <h2>{{course.name}} </h2>    
                     </div>
                     <div id="teacher-info">
                         <div id="teacher-name">
@@ -26,14 +26,16 @@
                     <div class="student-action-button">
                     <p>List</p>
                     <button [routerLink]= "['/course', course.id, 'students']">
-                        <img src="/assets/student_4950.png" alt="student-register">
+                        <img src="/assets/student_4950.png" alt="student-list">
                     </button>
                 </div>
             </div>
             <div id="course-edit-box">
-                <p>Edit</p>
                 <button id="edit-course" routerLink="/edit/course">
                     <img src="/assets/edit-icon.png" alt="Edit">
+                </button>
+                <button id="remove-course" [routerLink]="['/delete/course', course.id]">
+                    <img src="/assets/delete icon.png" alt="Remove">
                 </button>
             </div>
         </li>

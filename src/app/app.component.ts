@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './home/home.component';
+import { DeleteConfirmationComponent } from "./components/delete-confirmation/delete-confirmation.component";
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, HomeComponent],
+  imports: [HeaderComponent, HomeComponent, DeleteConfirmationComponent],
   template: `
-    <app-header/>
+    <app-header/><!-- 
+    <app-delete-confirmation/> -->
     <main>
       <app-home/>
     </main>

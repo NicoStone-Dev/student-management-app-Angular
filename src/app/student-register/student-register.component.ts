@@ -3,10 +3,11 @@ import { HoverDirective } from '../directives/hover.directive';
 import { StudentService } from '../services/student.service';
 import { StudentDTO } from '../models/StudentDTO';
 import { catchError } from 'rxjs';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-student-register',
-  imports: [HoverDirective],
+  imports: [HoverDirective, RouterLink],
   templateUrl: './student-register.component.html',
   styleUrl: './student-register.component.scss'
 })

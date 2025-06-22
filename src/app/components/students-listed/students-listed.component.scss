@@ -58,7 +58,7 @@ ul {
             #student-edit-box {
                 display: flex;
                 flex-direction: column;
-                width: 8%;
+                width: 5%;
                 height: 100%;
                 background-color: #401693;
                 border-radius: 7px;
@@ -73,8 +73,20 @@ ul {
                     border: none;
 
                     img {
-                        width: 2em;
+                        width: 1.8em;
                         background-color: white;
+                        border-radius: 5px;
+                    }
+                }
+
+                #remove-student {
+                    cursor: pointer;
+                    background-color: transparent;
+                    background: none;
+                    border: none;
+
+                    img {
+                        width: 1.8em;
                         border-radius: 5px;
                     }
                 }

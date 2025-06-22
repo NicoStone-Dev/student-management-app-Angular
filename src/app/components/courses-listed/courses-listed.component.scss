@@ -105,12 +105,12 @@ ul {
         #course-edit-box {
             display: flex;
             flex-direction: column;
-            width: 8%;
+            width: 5%;
             background-color: #401693;
             border-radius: 7px;
             justify-content: center;
             align-items: center;
-            box-shadow:inset 1px 1px 5px rgba(0, 0, 0, 0.5);
+            box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.5);
 
             #edit-course {
                 cursor: pointer;
@@ -119,10 +119,23 @@ ul {
                 border: none;
 
                 img {
-                    width: 2em;
+                    width: 1.8em;   
                     background-color: white;
                     border-radius: 5px;
                 }
+            }
+
+            #remove-course {
+                cursor: pointer;
+                background-color: transparent;
+                background: none;
+                border: none;
+
+                img {
+                    width: 1.8em;
+                    border-radius: 10px;
+                }
+
             }
         }
     }

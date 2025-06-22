@@ -57,5 +57,13 @@ export const routes: Routes = [
                 m => m.CourseEditComponent
             )
         }
+    },
+    {
+        path: 'delete/course/:id',
+        loadComponent: () => {
+            return import('./components/delete-confirmation/delete-confirmation.component').then(
+                m => m.DeleteConfirmationComponent
+            )
+        }
     }
-];
+]

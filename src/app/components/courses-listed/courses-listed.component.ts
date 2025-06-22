@@ -5,6 +5,7 @@ import { catchError } from 'rxjs';
 import { NgFor } from '@angular/common';
 import { HoverDirective } from '../../directives/hover.directive';
 import { RouterLink } from '@angular/router';
+import { DeleteConfirmationComponent } from '../delete-confirmation/delete-confirmation.component';
 
 @Component({
   selector: 'app-courses-listed',
@@ -28,5 +29,9 @@ export class CoursesListedComponent implements OnInit {
     }
 
     )
+  }
+
+  deleteCourse(){
+
   }
 }

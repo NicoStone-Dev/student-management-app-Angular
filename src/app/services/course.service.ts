@@ -28,4 +28,8 @@ export class CourseService {
   showClass(courseId: number): Observable<Student[]> {
     return this.http.get<Student[]>(`${this.apiServerURL}/courses/${courseId}/show/students`);
   }
+
+  deleteCourse(courseId:number): Observable<Object> {
+    return this.http.delete(`${this.apiServerURL}/courses/delete/${courseId}`);
+  }
 }

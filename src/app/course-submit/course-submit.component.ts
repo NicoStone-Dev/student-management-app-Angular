@@ -3,10 +3,11 @@ import { CourseService } from '../services/course.service';
 import { CourseDTO } from '../models/CourseDTO';
 import { catchError } from 'rxjs';
 import { HoverDirective } from '../directives/hover.directive';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-course-submit',
-  imports: [HoverDirective],
+  imports: [HoverDirective, RouterLink],
   templateUrl: './course-submit.component.html',
   styleUrl: './course-submit.component.scss'
 })
