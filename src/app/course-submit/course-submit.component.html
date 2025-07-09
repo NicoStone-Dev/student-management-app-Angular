@@ -1,5 +1,6 @@
 <!-- Course Name, Main Teacher, Main teacher email, Hours to finish  -->
 <div id="main-container">
+    <label id="warning-lacking-info" for="" *ngIf="insuficientInfo()"> Lacking info, please try again. </label>
     <h1>Course Submit</h1>
     <div id="info-container">
         <div id="left-container">
@@ -24,7 +25,7 @@
         </div>
     </div>
     <div id="button-div">
-        <button appHover id="submit-button" (click)="onSubmit()" routerLink="/">
+        <button appHover id="submit-button" (click)="onSubmit()" >
             <label>Add</label>
             <img src="./assets/courses icon.png" alt="">
         </button>

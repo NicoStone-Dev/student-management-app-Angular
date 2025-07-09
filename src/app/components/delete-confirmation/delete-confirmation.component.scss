@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: top;
     padding-top: 150px;
-    font-family: 'Trebuchet MS';
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 
     #dialog-box-container {
         background-color: rgb(44, 43, 49);
@@ -38,6 +38,7 @@
                 :hover {
                     cursor: pointer;
                 }
+
                 img {
                     width: 2em;
                 }

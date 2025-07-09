@@ -1,3 +1,16 @@
+#courselist-container {
+    background-color: rgb(44, 43, 49);
+    display: flex;
+    justify-content: center;
+    height: 45rem;
+    width: 80em;
+    border-radius: 20px;
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.5);
+    margin-top: 30px;
+    overflow-x: auto;
+    overflow-y: scroll;
+}
+
 ul {
     display: flex;
     padding: 0;
@@ -7,63 +20,57 @@ ul {
     padding-block: 30px;
     list-style: none;
 
-    :hover {
-        background-color: rgb(87, 88, 92);
-    }
 
     li {
-        font-family: 'Trebuchet MS';
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
         color: white;
-        margin-bottom: 10px;
         width: fit-content;
-        background-color: rgb(55, 58, 63);
         display: flex;
-        border-radius: 5px;
-        box-shadow: 5px 10px 50px rgba(0, 0, 0, 0.5);
+        border-radius: 15px;
+        background-color: #00000000;
+        margin: 10px;
 
         #course-container {
             width: 75em;
-            height: 7em;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-radius: 15px;
 
             #course-info {
                 width: 65%;
-                padding-inline: 10px;
+                padding-inline: 0px;
+                padding-block: 0px;
+                margin-block: 0px;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                border-left: 0;
-                border-top: 0;
-                border-bottom: 0;
-                border-style: groove;
-                border-radius: 10px;
-                border-color: rgba(0, 0, 0, 0.532);
 
 
                 #name {
-                    cursor: pointer;
-                    height: 7em;
+                    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+                    height: 9em;
                     width: 13em;
                     padding-inline: 30px;
                     display: flex;
                     align-items: center;
-                    border-left: 0;
-                    border-top: 0;
-                    border-bottom: 0;
-                    border-style: groove;
-                    border-radius: 10px;
-                    border-color: rgba(0, 0, 0, 0.532);
+                    background-color: #401693;
+                    border-radius: 15px;
                 }
 
                 #teacher-info {
+                    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+                    background-color: rgb(55, 58, 63);
+                    border-radius: 15px;
                     font-size: 13pt;
                     display: flex;
                     justify-content: left;
                     align-content: center;
                     width: 60%;
+                    height: 7em;
                     flex-direction: row;
+                    padding: 0;
+                    margin: 0;
 
                     #teacher-name {
                         padding-inline: 25px;
@@ -80,11 +87,16 @@ ul {
         }
 
         .student-action-button {
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            background-color: #401693;
+            margin-inline-end: 10px;
+            border-radius: 15px;
+            height: 7em;
             width: 15%;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-evenly;
+            justify-content: center;
             font-size: 13pt;
 
             button {
@@ -110,7 +122,7 @@ ul {
             border-radius: 7px;
             justify-content: center;
             align-items: center;
-            box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 
             #edit-course {
                 cursor: pointer;
@@ -119,7 +131,7 @@ ul {
                 border: none;
 
                 img {
-                    width: 1.8em;   
+                    width: 1.8em;
                     background-color: white;
                     border-radius: 5px;
                 }

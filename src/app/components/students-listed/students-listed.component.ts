@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, Signal, signal, WritableSignal } from '@angular/core';
 import { StudentService } from '../../services/student.service';
 import { Student } from '../../models/student';
 import { catchError } from 'rxjs';
@@ -6,10 +6,11 @@ import { NgFor } from '@angular/common';
 import { HoverDirective } from '../../directives/hover.directive';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CourseService } from '../../services/course.service';
+import { Course } from '../../models/course';
 
 @Component({
   selector: 'app-students-listed',
-  imports: [NgFor, HoverDirective, RouterLink],
+  imports: [NgFor, RouterLink],
   templateUrl: './students-listed.component.html',
   styleUrl: './students-listed.component.scss'
 })
@@ -20,6 +21,17 @@ export class StudentsListedComponent implements OnInit {
   studentService = inject(StudentService);
   courseService = inject(CourseService);
   studentList = signal<Array<Student>>([]);
+  courseAttributed = signal({
+    id: 0,
+    name: "null",
+    hoursToFinish: 0,
+    mainTeacherName: "",
+    mainTeacherEmail: "",
+    course_code: "",
+    studentList: []
+  });
+
+  courseAttributedByName : string = "";
 
   private route = inject(ActivatedRoute);
 
@@ -32,7 +44,7 @@ export class StudentsListedComponent implements OnInit {
     this.studentList.set([])
     // Defining id that is passed through the url:
     const courseIdFromRoute = this.route.snapshot.paramMap.get('id');
-
+    
     if (courseIdFromRoute != null) {
       // Then we change it to number type
       const numericCourseId = +courseIdFromRoute;
@@ -46,7 +58,7 @@ export class StudentsListedComponent implements OnInit {
           )).subscribe((data) => {
             this.studentList.set(data)
             //marking the end of data loading
-            this.isLoading.set(true)
+            this.isLoading.set(false)
           })
     }
   }

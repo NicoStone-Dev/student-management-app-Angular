@@ -1,7 +1,7 @@
 <div id="studentlist-container">
     <ul>
         <li *ngFor="let student of studentList()">
-            <div appHover id="student-container">
+            <div id="student-container">
                 <div id="student-info">
                     <img src="/assets/no-user-profile-photo.png" alt="student-profile-icon">
                     <div>
@@ -9,16 +9,16 @@
                         <p> Student code: {{student.student_code}} </p>
                     </div>
                     <div>
-                        <p> Course Enrolled: this is a course</p>
+                        <p> Course Enrolled: </p>
                         <p> Grade Year: {{student.grade_year}} </p>
                     </div>
                 </div>
                 <div id="student-edit-box">
                     <button id="edit-student" routerLink="/edit/student">
-                        <img appHover src="/assets/edit-icon.png" alt="">
+                        <img src="/assets/edit-icon.png" alt="">
                     </button>
                     <button id="remove-student" routerLink="">
-                        <img appHover src="/assets/delete icon.png" alt="">
+                        <img src="/assets/delete icon.png" alt="">
                     </button>
                 </div>
             </div>

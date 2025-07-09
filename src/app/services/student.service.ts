@@ -24,7 +24,7 @@ export class StudentService {
     return this.http.get<Course>(`${this.apiServerURL}/search/${courseId}`);
   }
 
-  registerStudent(new_student : StudentDTO): Observable<Object> {
+  registerStudent(new_student : StudentDTO): Observable<any> {
     return this.http.post(`${this.apiServerURL}/students/add`, new_student);
   }
 }

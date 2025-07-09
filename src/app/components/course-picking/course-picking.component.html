@@ -1,0 +1,20 @@
+<div id="main-container">
+    <div id="top-container">
+        <button id="close-button">
+            <img src="/assets/delete icon.png" alt="">
+        </button>
+    </div>
+    <div id="middle-container">
+        <label for="course-selection">Select Course: </label>
+        <select name="" id="course-selection-container" (change)= "chosenCourse($event)">
+            <option [value]="">...</option>
+            <option *ngFor="let course of course_list()" [value]="course.id"> {{course.name}} </option>
+        </select>
+    </div>
+    <div id="bottom-container">
+        <button id="join-button" (click) = "onJoin()" routerLink="/">
+            <label>Join</label>
+            <img src="" alt="">
+        </button>
+    </div>
+</div>

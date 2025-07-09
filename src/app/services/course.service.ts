@@ -21,15 +21,23 @@ export class CourseService {
     return this.http.get<Course[]>(`${this.apiServerURL}/courses/list`);
   }
   //Add method
-  addCourse(new_course : CourseDTO): Observable<Object> {
-    return this.http.post(`${   this.apiServerURL}/courses/add`, new_course)
+  addCourse(new_course: CourseDTO): Observable<Object> {
+    return this.http.post(`${this.apiServerURL}/courses/add`, new_course)
   }
 
   showClass(courseId: number): Observable<Student[]> {
     return this.http.get<Student[]>(`${this.apiServerURL}/courses/${courseId}/show/students`);
   }
 
-  deleteCourse(courseId:number): Observable<Object> {
+  deleteCourse(courseId: number): Observable<Object> {
     return this.http.delete(`${this.apiServerURL}/courses/delete/${courseId}`);
+  }
+
+  findCourse(courseId: number): Observable<Course> {
+    return this.http.get<Course>(`${this.apiServerURL}/courses/search/${courseId}`);
+  }
+
+  joinClass(courseId: number, studentId: number) {
+    return this.http.put(`${this.apiServerURL}/courses/join/course/${courseId}/student/${studentId}`, {});
   }
 }

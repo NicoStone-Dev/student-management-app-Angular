@@ -3,13 +3,11 @@ import { CourseService } from '../../services/course.service';
 import { Course } from '../../models/course';
 import { catchError } from 'rxjs';
 import { NgFor } from '@angular/common';
-import { HoverDirective } from '../../directives/hover.directive';
 import { RouterLink } from '@angular/router';
-import { DeleteConfirmationComponent } from '../delete-confirmation/delete-confirmation.component';
 
 @Component({
   selector: 'app-courses-listed',
-  imports: [NgFor, HoverDirective, RouterLink],
+  imports: [NgFor, RouterLink],
   templateUrl: './courses-listed.component.html',
   styleUrl: './courses-listed.component.scss'
 })
@@ -19,19 +17,20 @@ export class CoursesListedComponent implements OnInit {
 
   ngOnInit(): void {
     this.courseService.listCourses()
-    .pipe(
-      catchError((err) => {
-        throw err;
-      })
-    )
-    .subscribe((data) => {
-      this.courseList.set((data));
-    }
+      .pipe(
+        catchError((err) => {
+          console.log("Error fetching course list ", err)
+          throw err;
+        })
+      )
+      .subscribe((data) => {
+        this.courseList.set((data));
+      }
 
-    )
+      )
   }
 
-  deleteCourse(){
+  deleteCourse() {
 
   }
 }

@@ -1,8 +1,8 @@
 <div id="courselist-container">
     <ul>
         <li *ngFor="let course of courseList()">
-            <div appHover id="course-container">
-                <span id="course-info">
+            <div  id="course-container">
+                <div id="course-info">
                     <div id="name">
                         <h2>{{course.name}} </h2>    
                     </div>
@@ -16,7 +16,7 @@
                             <p> {{course.mainTeacherEmail}} </p>
                         </div>
                     </div>
-                </span>
+                </div>
                 <div class="student-action-button">
                     <p>Register a Student</p>
                     <button routerLink="/register/student">

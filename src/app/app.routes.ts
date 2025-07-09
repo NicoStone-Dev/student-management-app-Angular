@@ -65,5 +65,13 @@ export const routes: Routes = [
                 m => m.DeleteConfirmationComponent
             )
         }
+    },
+    {
+        path: 'register/student/course/selection',
+        loadComponent: () => {
+            return import('./components/course-picking/course-picking.component').then(
+                m => m.CoursePickingComponent
+            )
+        }
     }
 ]

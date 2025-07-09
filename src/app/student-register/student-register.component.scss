@@ -1,4 +1,12 @@
+#background-container {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 #main-container {
+    position: fixed;
     background-color: rgb(55, 58, 63);
     box-shadow: 5px 10px 50px rgba(0, 0, 0, 0.5);
     padding-block: 3em;
@@ -10,6 +18,14 @@
     align-content: center;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 75px;
+
+    #warning-lacking-info {
+        display: flex;
+        justify-content: center;
+        color: red;
+        background-color: rgba(0, 0, 0, 0.171);
+    }
 
     h1 {
         background-color: #401693;
@@ -53,8 +69,17 @@
                 background-color: rgb(56, 70, 92);
                 border: none;
                 color: white;
-                font-family: Verdana;
-                font-weight: normal;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 12pt;
+            }
+
+            #grade-selection-container {
+                background-color: rgb(56, 70, 92);
+                width: 170px;
+                height: 2.3em;
+                border: none;
+                color: white;
+                font-size: 12pt;
             }
         }
 
@@ -77,6 +102,7 @@
                 width: fit-content;
                 background-color: rgb(56, 70, 92);
                 border: none;
+                font-size: 12pt;
                 color: white;
             }
         }
@@ -110,4 +136,13 @@
             }
         }
     }
+}
+
+#course-join-dialog-box {
+    position: fixed;
+    background-color: #270d5b82;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
 }
