@@ -7,11 +7,8 @@ import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterOutlet, CoursesListedComponent, NgFor],
+  imports: [RouterOutlet],
   template: `
-    <div id="page-container">
-      <router-outlet/>
-    </div>
   `,
   styleUrl: './home.component.scss'
 })

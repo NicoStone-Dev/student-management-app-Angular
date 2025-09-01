@@ -1,43 +1,45 @@
-<div id="courselist-container">
-    <ul>
-        <li *ngFor="let course of courseList()">
-            <div  id="course-container">
-                <div id="course-info">
-                    <div id="name">
-                        <h2>{{course.name}} </h2>    
-                    </div>
-                    <div id="teacher-info">
-                        <div id="teacher-name">
-                            <p> Teacher: </p>
-                            <p> {{course.mainTeacherName}} </p>
+<div id="background-container">
+    <div id="courselist-container">
+        <ul>
+            <li *ngFor="let course of courseList()">
+                <div id="course-container">
+                    <div id="course-info">
+                        <div id="name">
+                            <h2>{{course.name}} </h2>
                         </div>
-                        <div id="teacher-email">
-                            <p> Teacher Email: </p>
-                            <p> {{course.mainTeacherEmail}} </p>
+                        <div id="teacher-info">
+                            <div id="teacher-name">
+                                <p> Teacher: </p>
+                                <p> {{course.mainTeacherName}} </p>
+                            </div>
+                            <div id="teacher-email">
+                                <p> Teacher Email: </p>
+                                <p> {{course.mainTeacherEmail}} </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="student-action-button">
-                    <p>Register a Student</p>
-                    <button routerLink="/register/student">
-                        <img src="/assets/add_students.png" alt="student-register">
-                    </button>
-                </div>
                     <div class="student-action-button">
-                    <p>List</p>
-                    <button [routerLink]= "['/course', course.id, 'students']">
-                        <img src="/assets/student_4950.png" alt="student-list">
+                        <p>Register a Student</p>
+                        <button routerLink="/register/student">
+                            <img src="/assets/add_students.png" alt="student-register">
+                        </button>
+                    </div>
+                    <div class="student-action-button">
+                        <p>List</p>
+                        <button [routerLink]="['/course', course.id, 'students']">
+                            <img src="/assets/student_4950.png" alt="student-list">
+                        </button>
+                    </div>
+                </div>
+                <div id="course-edit-box">
+                    <button id="edit-course" routerLink="/edit/course">
+                        <img src="/assets/edit-icon.png" alt="Edit">
+                    </button>
+                    <button id="remove-course" [routerLink]="['/delete/course', course.id]">
+                        <img src="/assets/delete icon.png" alt="Remove">
                     </button>
                 </div>
-            </div>
-            <div id="course-edit-box">
-                <button id="edit-course" routerLink="/edit/course">
-                    <img src="/assets/edit-icon.png" alt="Edit">
-                </button>
-                <button id="remove-course" [routerLink]="['/delete/course', course.id]">
-                    <img src="/assets/delete icon.png" alt="Remove">
-                </button>
-            </div>
-        </li>
-    </ul>
+            </li>
+        </ul>
+    </div>
 </div>

@@ -5,7 +5,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, HomeComponent, RouterOutlet],
+  imports: [HeaderComponent, RouterOutlet],
   template: `
     <app-header/><!-- 
     <app-delete-confirmation/> -->

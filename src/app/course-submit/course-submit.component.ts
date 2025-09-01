@@ -5,10 +5,11 @@ import { catchError } from 'rxjs';
 import { HoverDirective } from '../directives/hover.directive';
 import { RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
+import { ConfirmUserActionComponent } from "../components/confirm-user-action/confirm-user-action.component";
 
 @Component({
   selector: 'app-course-submit',
-  imports: [HoverDirective, NgIf, RouterLink],
+  imports: [HoverDirective, NgIf, ConfirmUserActionComponent],
   templateUrl: './course-submit.component.html',
   styleUrl: './course-submit.component.scss'
 })
@@ -22,7 +23,9 @@ export class CourseSubmitComponent {
     mainTeacherEmail: ""
   });
   insuficientInfo = signal(false);
+  //set to true for testing purpose (default: false)
   course_submited = signal(false);
+  course_submited_message : string = "Course successfully submitted";
 
   updateCourseName(event: Event): void {
     //Here we just grabbing any input from the user and addressing it to this const;
