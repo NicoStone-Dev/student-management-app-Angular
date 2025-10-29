@@ -32,10 +32,10 @@
                     </div>
                 </div>
                 <div id="course-edit-box">
-                    <button id="edit-course" routerLink="/edit/course">
+                    <!-- <button id="edit-course" routerLink="/edit/course">
                         <img src="/assets/edit-icon.png" alt="Edit">
-                    </button>
-                    <button id="remove-course" [routerLink]="['/delete/course', course.id]">
+                    </button> -->
+                    <button id="remove-course" (click)="onDelete(course.id)">
                         <img src="/assets/delete icon.png" alt="Remove">
                     </button>
                 </div>

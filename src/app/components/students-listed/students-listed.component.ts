@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, Signal, signal, WritableSignal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { StudentService } from '../../services/student.service';
 import { Student } from '../../models/student';
 import { catchError } from 'rxjs';
@@ -6,11 +6,11 @@ import { NgFor } from '@angular/common';
 import { HoverDirective } from '../../directives/hover.directive';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CourseService } from '../../services/course.service';
-import { Course } from '../../models/course';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-students-listed',
-  imports: [NgFor, RouterLink],
+  imports: [NgFor, RouterLink, HoverDirective],
   templateUrl: './students-listed.component.html',
   styleUrl: './students-listed.component.scss'
 })
@@ -20,6 +20,8 @@ export class StudentsListedComponent implements OnInit {
 
   studentService = inject(StudentService);
   courseService = inject(CourseService);
+  router = inject(Router);
+
   studentList = signal<Array<Student>>([]);
   courseAttributed = signal({
     id: 0,
@@ -31,7 +33,7 @@ export class StudentsListedComponent implements OnInit {
     studentList: []
   });
 
-  courseAttributedByName : string = "";
+  courseAttributedByName: string = "";
 
   private route = inject(ActivatedRoute);
 
@@ -44,8 +46,8 @@ export class StudentsListedComponent implements OnInit {
     this.studentList.set([])
     // Defining id that is passed through the url:
     const courseIdFromRoute = this.route.snapshot.paramMap.get('id');
-    
-    if (courseIdFromRoute != null) {
+
+    if (courseIdFromRoute) {
       // Then we change it to number type
       const numericCourseId = +courseIdFromRoute;
       // At last we treat the data
@@ -61,5 +63,36 @@ export class StudentsListedComponent implements OnInit {
             this.isLoading.set(false)
           })
     }
+  }
+
+  onDelete(studentId: number) {
+    this.isLoading.set(true);
+
+    const isConfirmed = confirm("Are you sure you want to delete this student from it's course?")
+    const courseIdFromRoute = this.route.snapshot.paramMap.get('id');
+
+    if (!courseIdFromRoute || isNaN(+courseIdFromRoute)) {
+      alert('Invalid course');
+      this.isLoading.set(false);
+      return;
+    }
+    const numericCourseId = +courseIdFromRoute;
+
+    if (isConfirmed) {
+      alert("Student has been removed!")
+      this.studentService.deleteStudent(studentId).subscribe({
+        next: () => {
+          this.router.navigate([`course/${numericCourseId}/students`]);
+          this.isLoading.set(false);
+        },
+        error: (error) => {
+          alert('Delete operation failed');
+          this.isLoading.set(false);
+          throw error;
+        }
+      }); 
+    }
+    this.isLoading.set(false);
+    this.router.navigate(['/']);
   }
 }

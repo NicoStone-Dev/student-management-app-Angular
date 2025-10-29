@@ -14,10 +14,10 @@
                     </div>
                 </div>
                 <div id="student-edit-box">
-                    <button id="edit-student" routerLink="/edit/student">
+                    <!-- <button appHover id="edit-student" routerLink="/edit/student">
                         <img src="/assets/edit-icon.png" alt="">
-                    </button>
-                    <button id="remove-student" routerLink="">
+                    </button> -->
+                    <button appHover id="remove-student" (click)="onDelete(student.id)">
                         <img src="/assets/delete icon.png" alt="">
                     </button>
                 </div>

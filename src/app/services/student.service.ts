@@ -27,4 +27,8 @@ export class StudentService {
   registerStudent(new_student : StudentDTO): Observable<any> {
     return this.http.post(`${this.apiServerURL}/students/add`, new_student);
   }
+
+  deleteStudent(studentId: number): Observable<Object> {
+    return this.http.delete(`${this.apiServerURL}/students/delete/${studentId}`);
+  }
 }

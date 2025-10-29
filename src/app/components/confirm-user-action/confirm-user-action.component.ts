@@ -1,5 +1,6 @@
 import { NgIf } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-confirm-user-action',
@@ -9,4 +10,9 @@ import { Component, Input } from '@angular/core';
 })
 export class ConfirmUserActionComponent {
   @Input() message! : string | null;
+   router = inject(Router);
+
+  goToHomePage(){
+    this.router.navigate(['/']);
+  }
 }

@@ -1,5 +1,5 @@
 #studentlist-container {
-    width: fit-content;
+    width: 75em;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -14,7 +14,7 @@ ul {
     padding-inline-end: 30px;
     margin: 0;
     flex-direction: column;
-    width: fit-content;
+    width: 100%;
     padding-block: 30px;
     list-style: none;
 
@@ -23,7 +23,7 @@ ul {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         color: white;
         margin-bottom: 10px;
-        width: fit-content;
+        width: 100%;
         background-color: rgba(55, 58, 63, 0);
         display: flex;
         border-radius: 5px;
