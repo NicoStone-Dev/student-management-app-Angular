@@ -18,7 +18,7 @@ export class CourseService {
 
   //List method
   listCourses(): Observable<Course[]> {
-    return this.http.get<Course[]>(`${this.apiServerURL}/courses/list`);
+    return this.http.get<Course[]>(`${this.apiServerURL}/courses`);
   }
   //Add method
   addCourse(new_course: CourseDTO): Observable<Object> {
@@ -38,6 +38,6 @@ export class CourseService {
   }
 
   joinClass(courseId: number, studentId: number) {
-    return this.http.put(`${this.apiServerURL}/courses/join/course/${courseId}/student/${studentId}`, {});
+    return this.http.put(`${this.apiServerURL}/courses/join/${courseId}/${studentId}`, {});
   }
 }

@@ -25,15 +25,13 @@ export class StudentsListedComponent implements OnInit {
   studentList = signal<Array<Student>>([]);
   courseAttributed = signal({
     id: 0,
-    name: "null",
+    name: "",
     hoursToFinish: 0,
     mainTeacherName: "",
     mainTeacherEmail: "",
     course_code: "",
     studentList: []
   });
-
-  courseAttributedByName: string = "";
 
   private route = inject(ActivatedRoute);
 

@@ -17,7 +17,7 @@ export class StudentService {
 
   //List method
   listStudents(): Observable<Student[]>{
-    return this.http.get<Student[]>(`${this.apiServerURL}/students/list`);
+    return this.http.get<Student[]>(`${this.apiServerURL}/students`);
   }
 
   getAttributedCourse(courseId : number): Observable<Course>{

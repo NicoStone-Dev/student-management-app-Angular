@@ -50,6 +50,7 @@ export class CoursesListedComponent implements OnInit {
         error: (error) => {
           alert('Delete operation failed');
           this.isLoading.set(false);
+          console.log(error);
         }
       });
     } else {
