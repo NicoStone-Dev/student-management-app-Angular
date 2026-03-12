@@ -1,17 +1,13 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from './sep/components/header/header.component';
-import { HomeComponent } from './sep/home/home.component';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { MainLayoutComponent } from './shared/layouts/main/main-layout/main-layout.component';
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, RouterOutlet],
+  imports: [MainLayoutComponent],
   template: `
-    <app-header /><!-- 
-    <app-delete-confirmation/> -->
-    <main>
-      <router-outlet />
-    </main>
+  <div id="app-container">
+    <app-main-layout></app-main-layout>
+  </div>
   `,
   styleUrl: 'app.component.scss',
 })
