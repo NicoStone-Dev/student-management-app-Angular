@@ -1,8 +1,129 @@
 //Colors, spacings, typography, shadows
 
-$colors :  {
-    "primary": #00000000,
-    "secondary": #00000000,
-    "primary": #00000000,
-    "primary": #00000000,
+/*
+COLORS = {
+  primary: "#78d6c7",
+  primaryDark: "#006B5F",
+  secondary: "#814C77",
+  background: "#F4FBF8",
+  surface: {
+    primary: "#F4FBF8",
+    secondary: "#DAE5E1",
+    secondaryDark: "#394f46",
+  },
+  outlineCommon: "#BEC9C5",
+  text: {
+    onPrimary: "#313937",
+    onPrimaryDark: "#FFFFFF",
+    onPrimaryVariant: "#6F7976",
+    onPrimaryDarkVariant: "#D1D1D1",
+    onSecondary: "#FFFFFF",
+  },
+  // Misc
+  errorPrimary: "#BA1A1A",
+  errorSecondary: "#ba1a1a3c",
+  success: "#078809",
+  successSecondary: "#0788093c",
+};
+CONTAINERS = {
+  spacings: {
+    xs: 4,
+    sm: 10,
+    md: 16,
+    lg: 24,
+    xl: 32,
+    xxl: 48,
+  },
+  sizes: {
+    xs: 16,
+    sm: 32,
+    md: 48,
+    lg: 64,
+    xl: 96,
+    xxl: 148,
+  },
+  radius: {
+    xs: 4,
+    sm: 8,
+    md: 16,
+    lg: 24,
+    xl: 32,
+    full: 9999,
+  },
+};
+TYPOGRAPHY = {
+  font: {
+    title: "Roboto",
+    body: "Inter",
+  },
+  sizes: {
+    small: 9,
+    body: 14,
+    bodyEmph: 16,
+    heading: 20,
+    title: 36,
+    extravagantTitle:42,
+  },
+  weights: {
+    regular: "400",
+    medium: "500",
+    bold: "700",
+  };
+};
+
+// To be added later into development
+export const SHADOW = {
+  small: {},
+  medium: {},
+  large: {},
+};
+
+ */
+
+:root {
+  // Colors
+  --color-primary: #401693;
+  --color-primary-dark: #6507e1;
+  --color-secondary: #010382;
+  --color-background: #00001d;
+  --color-surface-primary: #141034;
+  --color-surface-primary-dark: #000000;
+  --color-surface-secondary: #00000000;
+
+  // Container Spacing
+  --container-spacing-xs: 4px;
+  --container-spacing-sm: 10px;
+  --container-spacing-md: 16px;
+  --container-spacing-lg: 24px;
+  --container-spacing-xl: 32px;
+  --container-spacing-xxl: 48px;
+  // Container Sizing
+  --container-sizes-xs: 16px;
+  --container-sizes-sm: 32px;
+  --container-sizes-md: 48px;
+  --container-sizes-lg: 64px;
+  --container-sizes-xl: 96px;
+  --container-sizes-xl: 156px;
+  // Container Radius
+  --container-radius-xs: 4px;
+  --container-radius-sm: 8px;
+  --container-radius-md: 16px;
+  --container-radius-lg: 24px;
+  --container-radius-xl: 32px;
+  --container-radius-full: 999px;
+
+  // Font Family
+  --text-font-body: "Inter", sans-serif;
+  // Font Size
+  --text-size-small: 12pt;
+  --text-size-body: 12pt;
+  --text-size-bodyEmph: 12pt;
+  --text-size-heading: 12pt;
+  --text-size-title: 12pt;
+  // Weight
+  --text-weight-regular: 400;
+  --text-weight-medium: 500;
+  --text-weight-bold: 700;
+
+  // Shadows and insets to be implemented
 }
